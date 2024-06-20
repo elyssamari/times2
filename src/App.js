@@ -2,7 +2,7 @@ import './App.css';
 import ApplicationBar from './layouts/ApplicationBar.tsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.tsx'
 import MemoriesGallery from './pages/MemoryGallery/MemoryGallery.tsx';
 import MusicPlaylist from './pages/Music/MusicPlaylist.tsx';
@@ -20,7 +20,7 @@ const theme = createTheme({
 
 const backgrounds = {
   '/': { type: 'color', value: '#FFFCF4', borderTop: 'none' },
-  '/memories-gallery': { type: 'color', value: '#FFFCF4', borderTop: '1px solid #37352f' },
+  '/memories-gallery': { type: 'color', value: '#FFFCF4', borderTop: 'solid #37352f' },
   '/music-playlist': { type: 'color', value: '#FFFCF4', borderTop: 'solid #37352f' },
   '/couple-counter': { type: 'color', value: '#FFFCF4', borderTop: 'solid #37352f'},
   '/messages': { type: 'color', value: '#FFFCF4', borderTop: 'solid #37352f' },
@@ -53,8 +53,8 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename='/times2'>
-      <ApplicationBar />
+      <Router basename="/times2">
+        <ApplicationBar />
         <Routes>
           <Route path="/" element={<AppWrapper><Home /></AppWrapper>} />
           <Route path="/memories-gallery" element={<AppWrapper><MemoriesGallery /></AppWrapper>} />
@@ -62,7 +62,7 @@ export default function App() {
           <Route path="/couple-counter" element={<AppWrapper><AnniversaryCounter /></AppWrapper>} />
           <Route path="/messages" element={<AppWrapper><Affirmations /></AppWrapper>} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ThemeProvider>
   );
 }
