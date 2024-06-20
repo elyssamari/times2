@@ -31,7 +31,7 @@ export default function ApplicationBar() {
       <Toolbar>
         <Grid container justifyContent='space-between' alignItems='center'>
           <Link
-            href='/'
+            href='/times2'
             sx={{ color: '#fff', textDecoration: 'none' }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center' }} className="jump-container">
