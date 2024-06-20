@@ -8,10 +8,10 @@ import TryRoundedIcon from '@mui/icons-material/TryRounded';
 
 
 const navItems = [
-  { name: 'Memories Gallery', icon: <PhotoLibraryRoundedIcon sx={{ color: '#B89136' }} />, href: '/memories-gallery' },
-  { name: 'Music Playlist', icon: <LibraryMusicRoundedIcon sx={{ color: '#B89136' }} />, href: '/music-playlist' },
-  { name: 'Couple Counter', icon: <CalendarMonthRoundedIcon sx={{ color: '#B89136' }} />, href: '/couple-counter' },
-  { name: 'Messages', icon: <TryRoundedIcon sx={{ color: '#B89136' }} />, href: '/messages' }
+  { name: 'Memories Gallery', icon: <PhotoLibraryRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/memories-gallery' },
+  { name: 'Music Playlist', icon: <LibraryMusicRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/music-playlist' },
+  { name: 'Couple Counter', icon: <CalendarMonthRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/couple-counter' },
+  { name: 'Messages', icon: <TryRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/messages' }
 ];
 
 export default function ApplicationBar() {

@@ -19,7 +19,7 @@ export default function Home() {
       left: 0, 
       width: '100%', 
       height: '100%',  
-      backgroundImage: 'url(day-landscape.png)',
+      backgroundImage: `url(${process.env.PUBLIC_URL}/day-landscape.png)`,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat', 
       backgroundPosition: 'center',
@@ -38,20 +38,20 @@ export default function Home() {
         className="jump-container">
         <img
           alt='elyssa'
-          src='/madame.png'
+          src={`${process.env.PUBLIC_URL}/madame.png`}
           className={isHeartHovered ? 'jump' : 'jump-madame'}
           style={{ height: 248 }}
         />
         <img
           alt='heart'
-          src='/heart.png'
+          src={`${process.env.PUBLIC_URL}/heart.png`}
           style={{ height: 160 }}
           onMouseEnter={handleHeartHover}
           onMouseLeave={handleHeartLeave}
         />
         <img
           alt='joshua'
-          src='/monsieur.png'
+          src={`${process.env.PUBLIC_URL}/monsieur.png`}
           className={isHeartHovered ? 'jump' : 'jump-monsieur'}
           style={{ height: 248 }}
         />

@@ -53,10 +53,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
-        <ApplicationBar />
+      <BrowserRouter basename='/times2'>
+      <ApplicationBar />
         <Routes>
-          <Route path="/times2" element={<AppWrapper><Home /></AppWrapper>} />
+          <Route path="/" element={<AppWrapper><Home /></AppWrapper>} />
           <Route path="/memories-gallery" element={<AppWrapper><MemoriesGallery /></AppWrapper>} />
           <Route path="/music-playlist" element={<AppWrapper><MusicPlaylist /></AppWrapper>} />
           <Route path="/couple-counter" element={<AppWrapper><AnniversaryCounter /></AppWrapper>} />
