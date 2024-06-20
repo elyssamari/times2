@@ -1,38 +1,93 @@
-.App {
+.nav-item {
+  color: #958C77;
+  text-decoration: none;
+}
+
+.nav-item:hover .MuiSvgIcon-root,
+.nav-item.active .MuiSvgIcon-root {
+  color: #FCC850 !important;
+}
+
+.nav-item:hover .hoverLine,
+.nav-item.active .hoverLine {
+  width: 100%;
+}
+
+.jump-container:hover .jump {
+  animation: jump 0.5s ease-in-out infinite;
+}
+
+.jump-madame:hover {
+  animation: jump 0.5s ease-in-out infinite;
+}
+
+.jump-monsieur:hover {
+  animation: jump 0.5s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes jumping {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+.jumping {
+  animation: jump 0.5s;
+}
+
+
+.widget-background {
+  position: relative;
+  overflow: hidden; 
+}
+
+.widget-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: inherit; 
+  z-index: 1; 
+}
+
+.widget-content {
+  position: relative;
+  z-index: 2; 
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button.round {
+  background-color: transparent;
   color: white;
+  border: none;
+  font-size: 30px;
+  height: 75px;
+  width:75px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+button.round:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+ }
+ 
+ button.round:active {
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px) scale(0.95);
+ }
