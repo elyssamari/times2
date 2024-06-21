@@ -3,11 +3,6 @@
   text-decoration: none;
 }
 
-.nav-item:hover .MuiSvgIcon-root,
-.nav-item.active .MuiSvgIcon-root {
-  color: #FCC850 !important;
-}
-
 .nav-item:hover .hoverLine,
 .nav-item.active .hoverLine {
   width: 100%;
