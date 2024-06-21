@@ -22,7 +22,7 @@ export default function Affirmations() {
 
       <Grid container gap={2}
         sx={{
-          backgroundImage: 'url(/day-pink-house.png)',
+          backgroundImage: `url(${process.env.PUBLIC_URL}/day-pink-house.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '16px 16px 16px 16px',
@@ -34,7 +34,7 @@ export default function Affirmations() {
         <Grid container justifyContent='center'>
           <img
             alt='affirmation'
-            src={currentMessage.photo}
+            src={`${process.env.PUBLIC_URL}/` + currentMessage.photo}
             style={{ height: 200 }}
           />
         </Grid>
@@ -49,7 +49,7 @@ export default function Affirmations() {
         <Grid container justifyContent='center'>
           <img
             alt='elyssa'
-            src='/madame.png'
+            src={`${process.env.PUBLIC_URL}/madame.png`}
           />
         </Grid>
         <Grid container justifyContent='center'>

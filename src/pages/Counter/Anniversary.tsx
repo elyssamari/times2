@@ -32,7 +32,7 @@ export default function Anniversary() {
   return (
     <Grid container className="widget-background"
     sx={{
-      backgroundImage: 'url(day-duck-house.png)',
+      backgroundImage: `url(${process.env.PUBLIC_URL}/day-duck-house.png)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       width: "586px", 

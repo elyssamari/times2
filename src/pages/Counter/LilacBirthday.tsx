@@ -41,7 +41,7 @@ export default function BirthdayCountdown() {
   return (
     <Grid container className="widget-background"
     sx={{
-      backgroundImage: 'url(day-pink-flower.png)',
+      backgroundImage: `url(${process.env.PUBLIC_URL}/day-pink-flower.png)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       width: "586px", 

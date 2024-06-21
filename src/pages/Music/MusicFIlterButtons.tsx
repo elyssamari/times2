@@ -24,20 +24,20 @@ export default function MusicFilterButtons({ filterButton, setFilterButton }) {
           <>
             <img
               alt='elyssa'
-              src='/madame.png'
+              src={`${process.env.PUBLIC_URL}/madame.png`}
               className={isHeartHovered ? 'jump' : 'jump-madame'}
               style={{ height: 150 }}
             />
             <img
               alt='heart'
-              src='/heart.png'
+              src={`${process.env.PUBLIC_URL}/heart.png`}
               style={{ height: 100 }}
               onMouseEnter={handleHeartHover}
               onMouseLeave={handleHeartLeave}
             />
             <img
               alt='joshua'
-              src='/monsieur.png'
+              src={`${process.env.PUBLIC_URL}/monsieur.png`}
               className={isHeartHovered ? 'jump' : 'jump-monsieur'}
               style={{ height: 150 }}
             />

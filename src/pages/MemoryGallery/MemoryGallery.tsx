@@ -130,7 +130,7 @@ export default function MemoryGallery() {
 }
 
 const itemDataInitial  = [
-  { img: '/GalleryPhotos/220908.JPEG', title: '220908', type: 'photo', date: '2022-09-08', width: 1536, height: 2048 },
+  { img: `/GalleryPhotos/220908.JPEG`, title: '220908', type: 'photo', date: '2022-09-08', width: 1536, height: 2048 },
   { img: '/GalleryPhotos/221119.JPEG', title: '221119', type: 'photo', date: '2022-11-19', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/221124.JPEG', title: '221124', type: 'photo', date: '2022-11-24', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/221208-video.MP4', title: '221208-video', type: 'video', date: '2022-12-08', width: 496, height: 896, favorite: false },
@@ -433,4 +433,15 @@ const itemDataInitial  = [
   { img: '/GalleryPhotos/240531.JPEG', title: '240531', type: 'photo', date: '2024-05-31', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/240604.JPEG', title: '240604', type: 'photo', date: '2024-06-04', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/240604-video.MP4', title: '240604', type: 'video', date: '2024-06-04', favorite: false },
+  { img: '/GalleryPhotos/240608.JPEG', title: '240608', type: 'photo', date: '2024-06-08', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240608-live.MP4', title: '240608-live', type: 'live photo', date: '2024-06-08', favorite: false },
+  { img: '/GalleryPhotos/240611-1.JPEG', title: '240611-1', type: 'photo', date: '2024-06-11', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-2.JPEG', title: '240612-2', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-3.JPEG', title: '240612-3', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-4.JPEG', title: '240612-4', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-5.JPEG', title: '240612-5', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-6.JPEG', title: '240612-6', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-7.JPEG', title: '240612-7', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240612-8.JPEG', title: '240612-8', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240618.JPEG', title: '240618', type: 'photo', date: '2024-06-18', width: 1536, height: 2048, favorite: false },
 ]

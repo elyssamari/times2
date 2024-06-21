@@ -30,7 +30,7 @@ export default function CoupleCounter() {
     <>
       <img
         alt='elyssa'
-        src='/madame.png'
+        src={`${process.env.PUBLIC_URL}/madame.png`}
         className={isJumpingLeft ? 'jumping' : ''}
         style={{ height: 200 }}
       />
@@ -83,7 +83,7 @@ export default function CoupleCounter() {
       </Grid>
       <img
         alt='joshua'
-        src='/monsieur.png'
+        src={`${process.env.PUBLIC_URL}/monsieur.png`}
         className={isJumpingRight ? 'jumping' : ''}
         style={{ height: 200 }}
       />
