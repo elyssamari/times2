@@ -30,7 +30,7 @@ export default function Home({ darkMode }) {
       borderRadius: '10px',
       borderWidth: '2px',
       borderStyle: 'solid',
-      borderColor: darkMode ? '#FFFCF4' : '#37352f'
+      borderColor: darkMode ? '#FFF' : 'black'
     }}>
       <Grid container gap={10} padding='96px 24px'>
         <Grid
@@ -70,12 +70,12 @@ export default function Home({ darkMode }) {
             borderColor:  darkMode ? '#333' : 'white'
           }}>
           <Grid item >
-            <Typography variant="h3" color={darkMode ? '#FFFCF4' : '#E3793F'} fontWeight='bold'>
+            <Typography variant="h3" color={darkMode ? '#FFF' : '#E3793F'} fontWeight='bold'>
               Happy Birthday Josh!
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="h5" color={darkMode ? '#FFFCF4' : '#E3793F'} fontWeight='bold'>
+            <Typography variant="h5" color={darkMode ? '#FFF' : '#E3793F'} fontWeight='bold'>
               Surprise! This is my gift to you plus many more. I included many things that are dear to me and helped me go through my rough time. Many of my favorite songs, videos, etc. are in here and though they might be a bit embarrassing to show, I hope you still enjoy each of them.
               I know this might be a little scuffed (since it is not responsive yet :3), but I wanted to give us both a space where we can continue adding features and memories of our journey. I promise to add dark mode too hehe. I love you so much and I hope you enjoy this gift. &lt;3  
               Happy Birthday Joshua!

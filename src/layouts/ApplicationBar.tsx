@@ -144,7 +144,7 @@ export default function ApplicationBar({ toggleDarkMode, darkMode }) {
                         }}
                       >
                         {item.icon}
-                        <Typography variant="h6" fontWeight='bold'>
+                        <Typography variant="h6" fontWeight='bold' color={darkMode ? 'white' : 'black'}>
                           {item.name}
                         </Typography>
                         <Box className="hoverLine"
