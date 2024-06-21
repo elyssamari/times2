@@ -1,9 +1,18 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function EvolutionCounter() {
-  const [count, setCount] = useState(0);
+  // Lazy initialization of the state
+  const [count, setCount] = useState(() => {
+    const savedCount = localStorage.getItem('evolutionCount');
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+
+  // Update localStorage whenever count changes
+  useEffect(() => {
+    localStorage.setItem('evolutionCount', count.toString());
+  }, [count]);
 
   const handleIncrement = () => {
     setCount(count + 1);

@@ -1,12 +1,27 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function CoupleCounter() {
-  const [countLeft, setCountLeft] = useState(0);
-  const [countRight, setCountRight] = useState(5);
+  // Lazy initialization of the state
+  const [countLeft, setCountLeft] = useState(() => {
+    const savedCountLeft = localStorage.getItem('countLeft');
+    return savedCountLeft !== null ? parseInt(savedCountLeft, 10) : 0;
+  });
+  
+  const [countRight, setCountRight] = useState(() => {
+    const savedCountRight = localStorage.getItem('countRight');
+    return savedCountRight !== null ? parseInt(savedCountRight, 10) : 5;
+  });
+
   const [isJumpingLeft, setIsJumpingLeft] = useState(false);
   const [isJumpingRight, setIsJumpingRight] = useState(false);
+
+  // Update localStorage whenever counts change
+  useEffect(() => {
+    localStorage.setItem('countLeft', countLeft.toString());
+    localStorage.setItem('countRight', countRight.toString());
+  }, [countLeft, countRight]);
 
   const handleRightArrowClick = () => {
     if (countRight < 5 && countLeft > 0) {

@@ -1,9 +1,18 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 export default function KnuckleCounter() {
-  const [count, setCount] = useState(113);
+  // Lazy initialization of the state
+  const [count, setCount] = useState(() => {
+    const savedCount = localStorage.getItem('knuckleCount');
+    return savedCount !== null ? parseInt(savedCount, 10) : 113;
+  });
+
+  // Update localStorage whenever count changes
+  useEffect(() => {
+    localStorage.setItem('knuckleCount', count.toString());
+  }, [count]);
 
   const handleIncrement = () => {
     setCount(count + 1);

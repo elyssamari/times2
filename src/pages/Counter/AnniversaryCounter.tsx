@@ -5,7 +5,7 @@ import SunflowerBirthday from "./SunflowerBirthday.tsx";
 import LilacBirthday from "./LilacBirthday.tsx";
 import EvolutionCounter from "./EvolutionCounter.tsx";
 import KnuckleCounter from "./KnuckleCounter.tsx";
-import NailCounter from "./LikeCounter.tsx";
+import LikeCounter from "./LikeCounter.tsx";
 import CoupleCounter from "./CoupleCounter.tsx";
 
 
@@ -34,7 +34,7 @@ export default function AnniversaryCounter() {
         <Grid container direction='row' gap={4} justifyContent='center'>
         <EvolutionCounter />
         <KnuckleCounter />
-        <NailCounter/>
+        <LikeCounter/>
         </Grid>
       </Grid>
     </ThemeProvider>

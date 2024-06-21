@@ -1,9 +1,16 @@
 import { Box, Grid, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
-export default function NailCounter() {
-  const [count, setCount] = useState(0);
+export default function LikeCounter() {
+  const [count, setCount] = useState(() => {
+    const savedCount = localStorage.getItem('nailCount');
+    return savedCount !== null ? parseInt(savedCount, 10) : 0;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('nailCount', count.toString());
+  }, [count]);
 
   const handleIncrement = () => {
     setCount(count + 1);
