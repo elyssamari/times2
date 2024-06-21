@@ -444,4 +444,6 @@ const itemDataInitial  = [
   { img: '/GalleryPhotos/240612-7.JPEG', title: '240612-7', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/240612-8.JPEG', title: '240612-8', type: 'photo', date: '2024-06-12', width: 1536, height: 2048, favorite: false },
   { img: '/GalleryPhotos/240618.JPEG', title: '240618', type: 'photo', date: '2024-06-18', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240620-1.JPEG', title: '240620-1', type: 'photo', date: '2024-06-20', width: 1536, height: 2048, favorite: false },
+  { img: '/GalleryPhotos/240620-2.JPEG', title: '240620-2', type: 'photo', date: '2024-06-20', width: 1536, height: 2048, favorite: false },
 ]
