@@ -2,7 +2,7 @@ import './App.css';
 import ApplicationBar from './layouts/ApplicationBar.tsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.tsx'
 import MemoriesGallery from './pages/MemoryGallery/MemoryGallery.tsx';
 import MusicPlaylist from './pages/Music/MusicPlaylist.tsx';
@@ -10,7 +10,6 @@ import AnniversaryCounter from './pages/Counter/AnniversaryCounter.tsx';
 import Affirmations from './pages/Affirmations.tsx';
 import { Grid } from "@mui/material";
 import { useLocation } from 'react-router-dom';
-
 
 const theme = createTheme({
   typography: {
@@ -53,7 +52,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router basename="/times2">
+      <Router>
         <ApplicationBar />
         <Routes>
           <Route path="/" element={<AppWrapper><Home /></AppWrapper>} />

@@ -6,12 +6,11 @@ import LibraryMusicRoundedIcon from '@mui/icons-material/LibraryMusicRounded';
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import TryRoundedIcon from '@mui/icons-material/TryRounded';
 
-
 const navItems = [
-  { name: 'Memories Gallery', icon: <PhotoLibraryRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/memories-gallery' },
-  { name: 'Music Playlist', icon: <LibraryMusicRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/music-playlist' },
-  { name: 'Couple Counter', icon: <CalendarMonthRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/couple-counter' },
-  { name: 'Messages', icon: <TryRoundedIcon sx={{ color: '#B89136' }} />, href: '/times2/messages' }
+  { name: 'Memories Gallery', icon: <PhotoLibraryRoundedIcon sx={{ color: '#B89136' }} />, href: '#/memories-gallery' },
+  { name: 'Music Playlist', icon: <LibraryMusicRoundedIcon sx={{ color: '#B89136' }} />, href: '#/music-playlist' },
+  { name: 'Couple Counter', icon: <CalendarMonthRoundedIcon sx={{ color: '#B89136' }} />, href: '#/couple-counter' },
+  { name: 'Messages', icon: <TryRoundedIcon sx={{ color: '#B89136' }} />, href: '#/messages' }
 ];
 
 export default function ApplicationBar() {
@@ -26,12 +25,13 @@ export default function ApplicationBar() {
   const handleHeartLeave = () => {
     setIsHeartHovered(false);
   };
+
   return (
     <AppBar elevation={0} position='relative' sx={{ background: '#FFFCF4', padding: `16px 8px 8px 8px` }}>
       <Toolbar>
         <Grid container justifyContent='space-between' alignItems='center'>
           <Link
-            href='/times2'
+            href='#/'
             sx={{ color: '#fff', textDecoration: 'none' }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center' }} className="jump-container">
@@ -63,7 +63,7 @@ export default function ApplicationBar() {
                 <Grid item key={item.name}>
                   <Link
                     href={item.href}
-                    className={location.pathname === item.href ? 'nav-item active' : 'nav-item'}
+                    className={location.hash === item.href ? 'nav-item active' : 'nav-item'}
                     sx={{ color: '#37352f', textDecoration: 'none' }}
                   >
                     <Box
