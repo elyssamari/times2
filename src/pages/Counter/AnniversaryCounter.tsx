@@ -9,25 +9,26 @@ import LikeCounter from "./LikeCounter.tsx";
 import CoupleCounter from "./CoupleCounter.tsx";
 
 
-export default function AnniversaryCounter() {
-  const finalTheme = createTheme({
-    typography: {
-      fontFamily: 'Inconsolata, monospace',
-    }
-  });
+export default function AnniversaryCounter({darkMode}) {
+  const getTheme = (darkMode) =>
+    createTheme({
+      typography: {
+        fontFamily: 'Inconsolata, monospace',
+      },
+    });
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <ThemeProvider theme={getTheme(darkMode)}>
       <Grid container gap={4} padding='24px 24px'>
         <Grid container direction='column' gap={3}>
-          <Typography variant="h3" fontWeight='bold' align='center'>
+          <Typography variant="h3" fontWeight='bold' align='center' sx={{ color: darkMode ? 'white' : 'black' }}>
             Couple Counter
           </Typography>
-          <Box height='2px' width='100%' sx={{ backgroundColor: 'black' }} />
+          <Box height='2px' width='100%' sx={{ backgroundColor: '#3F3F3F'}} />
         </Grid>
       </Grid>
       <Grid container gap={3} padding='24px 24px' justifyContent='center'>
-        <Anniversary />
+        <Anniversary darkMode={darkMode}/>
         <SunflowerBirthday />
         <LilacBirthday />
         <CoupleCounter/>
