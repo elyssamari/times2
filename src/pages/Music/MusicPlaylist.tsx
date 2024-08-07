@@ -7,6 +7,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import MusicFilterButtons from "./MusicFIlterButtons.tsx";
 
+// Function to create theme based on darkMode
 const getTheme = (darkMode) =>
   createTheme({
     typography: {
@@ -50,7 +51,7 @@ export default function MusicPlaylist({ darkMode }) {
     <ThemeProvider theme={getTheme(darkMode)}>
       <Grid container padding='24px 24px' direction='column'>
         <Grid item>
-          <Typography variant="h3" fontWeight='bold' align='center'>
+          <Typography variant="h3" fontWeight='bold' align='center' sx={{ color: darkMode ? 'white' : 'black' }}>
             Music Playlist
           </Typography>
         </Grid>
@@ -60,9 +61,9 @@ export default function MusicPlaylist({ darkMode }) {
               <Box sx={{ borderBottom: 1, borderColor: '#3F3F3F' }}>
                 <TabList onChange={handleChange}>
                   <Tab label="All" value="1" />
-                  <Tab label="Artist" value="2" />
-                  <Tab label="Albums" value="3" />
-                  <Tab label="Playlist" value="4" />
+                  <Tab label="Artist" value="Artist" />
+                  <Tab label="Albums" value="Albums" />
+                  <Tab label="Playlist" value="Playlist" />
                 </TabList>
               </Box>
               <TabPanel value="1" sx={{ padding: '24px 0px' }}>

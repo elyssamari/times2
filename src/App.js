@@ -83,7 +83,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<AppWrapper darkMode={darkMode}><Home darkMode={darkMode} /></AppWrapper>} />
           <Route path="/memories-gallery" element={<AppWrapper darkMode={darkMode}><MemoriesGallery darkMode={darkMode} /></AppWrapper>} />
-          <Route path="/music-playlist" element={<AppWrapper darkMode={darkMode}><MusicPlaylist/></AppWrapper>} />
+          <Route path="/music-playlist" element={<AppWrapper darkMode={darkMode}><MusicPlaylist darkMode={darkMode}/></AppWrapper>} />
           <Route path="/couple-counter" element={<AppWrapper darkMode={darkMode}><AnniversaryCounter/></AppWrapper>} />
           <Route path="/messages" element={<AppWrapper darkMode={darkMode}><Affirmations/></AppWrapper>} />
         </Routes>
