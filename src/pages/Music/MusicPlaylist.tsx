@@ -7,35 +7,34 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import MusicFilterButtons from "./MusicFIlterButtons.tsx";
 
-
-const finalTheme = createTheme({
-  typography: {
-    fontFamily: 'Inconsolata, monospace',
-  },
-  components: {
-    MuiTab: {
-      styleOverrides: {
-        root: ({ theme }) => ({
-          ...theme.typography.body1,
-          fontWeight: theme.typography.fontWeightBold,
-          color: 'gray',
-          '&.Mui-selected': {
-            color: '#37352f',
-          },
-        }),
-      },
+const getTheme = (darkMode) =>
+  createTheme({
+    typography: {
+      fontFamily: 'Inconsolata, monospace',
     },
-    MuiTabs: {
-      styleOverrides: {
-        indicator: {
-          backgroundColor: '#37352f',
+    components: {
+      MuiTab: {
+        styleOverrides: {
+          root: {
+            fontWeight: 'bold',
+            color: darkMode ? 'gray' : 'gray',
+            '&.Mui-selected': {
+              color: darkMode ? 'white' : '#37352f',
+            },
+          },
+        },
+      },
+      MuiTabs: {
+        styleOverrides: {
+          indicator: {
+            backgroundColor: darkMode ? 'white' : '#37352f',
+          },
         },
       },
     },
-  },
-});
+  });
 
-export default function MusicPlaylist() {
+export default function MusicPlaylist({ darkMode }) {
   const [value, setValue] = useState("1");
   const [filterButton, setFilterButton] = useState("For us");
 
@@ -48,7 +47,7 @@ export default function MusicPlaylist() {
   );
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <ThemeProvider theme={getTheme(darkMode)}>
       <Grid container padding='24px 24px' direction='column'>
         <Grid item>
           <Typography variant="h3" fontWeight='bold' align='center'>
@@ -58,12 +57,12 @@ export default function MusicPlaylist() {
         <Grid item>
           <Box sx={{ padding: '0px 24' }}>
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: '#302D45' }}>
+              <Box sx={{ borderBottom: 1, borderColor: '#3F3F3F' }}>
                 <TabList onChange={handleChange}>
                   <Tab label="All" value="1" />
-                  <Tab label="Artist" value="Artist" />
-                  <Tab label="Albums" value="Albums" />
-                  <Tab label="Playlist" value="Playlist" />
+                  <Tab label="Artist" value="2" />
+                  <Tab label="Albums" value="3" />
+                  <Tab label="Playlist" value="4" />
                 </TabList>
               </Box>
               <TabPanel value="1" sx={{ padding: '24px 0px' }}>

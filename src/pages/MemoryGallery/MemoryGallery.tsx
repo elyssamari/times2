@@ -9,34 +9,34 @@ import { Grid, Typography } from '@mui/material';
 import FilterButtons from './FilterButtons.tsx';
 import Gallery from './Gallery.tsx';
 
-
-const finalTheme = createTheme({
-  typography: {
-    fontFamily: 'Inconsolata, monospace',
-  },
-  components: {
-    MuiTab: {
-      styleOverrides: {
-        root: ({ theme }) => ({
-          ...theme.typography.body1,
-          fontWeight: theme.typography.fontWeightBold,
-          color: 'gray',
-          '&.Mui-selected': {
-            color: '#37352f',
-          },
-        }),
-      },
+const getTheme = (darkMode) =>
+  createTheme({
+    typography: {
+      fontFamily: 'Inconsolata, monospace',
     },
-    MuiTabs: {
-      styleOverrides: {
-        indicator: {
-          backgroundColor: '#37352f',
+    components: {
+      MuiTab: {
+        styleOverrides: {
+          root: {
+            fontWeight: 'bold',
+            color: darkMode ? 'gray' : 'gray',
+            '&.Mui-selected': {
+              color: darkMode ? 'white' : '#37352f',
+            },
+          },
+        },
+      },
+      MuiTabs: {
+        styleOverrides: {
+          indicator: {
+            backgroundColor: darkMode ? 'white' : '#37352f',
+          },
         },
       },
     },
-  },
-});
-export default function MemoryGallery() {
+  });
+
+export default function MemoryGallery({ darkMode }) {
   const [value, setValue] = useState('1');
   const [itemData, setItemData] = useState(() => {
     const savedData = localStorage.getItem('itemData');
@@ -48,13 +48,13 @@ export default function MemoryGallery() {
     localStorage.setItem('itemData', JSON.stringify(itemData));
   }, [itemData]);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   const filterItems = () => {
     let filteredItems = itemData;
-  
+
     if (value === '2') {
       filteredItems = filteredItems.filter(item => item.type === 'photo');
     } else if (value === '3') {
@@ -62,7 +62,7 @@ export default function MemoryGallery() {
     } else if (value === '4') {
       filteredItems = filteredItems.filter(item => item.type === 'video');
     }
-  
+
     if (filterButton === 'Latest') {
       filteredItems = filteredItems.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     } else if (filterButton === 'Oldest') {
@@ -70,10 +70,9 @@ export default function MemoryGallery() {
     } else if (filterButton === 'Favorites') {
       filteredItems = filteredItems.filter(item => item.favorite);
     }
-  
+
     return filteredItems;
   };
-  
 
   const toggleFavorite = (img) => {
     const updatedItems = itemData.map(item =>
@@ -83,21 +82,17 @@ export default function MemoryGallery() {
   };
 
   return (
-    <ThemeProvider theme={finalTheme}>
+    <ThemeProvider theme={getTheme(darkMode)}>
       <Grid container padding='24px 24px' direction='column'>
         <Grid item>
-          <Typography variant="h3" fontWeight='bold' align='center'>
+          <Typography variant="h3" fontWeight='bold' align='center' sx={{ color: darkMode ? 'white' : 'black' }}>
             Memories Gallery
           </Typography>
         </Grid>
         <Grid item>
-          <Box
-            sx={{
-              padding: '0px 24',
-            }}
-          >
+          <Box sx={{ padding: '0px 24' }}>
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: '#302D45' }}>
+              <Box sx={{ borderBottom: 1, borderColor: '#3F3F3F' }}>
                 <TabList onChange={handleChange}>
                   <Tab label="All" value="1" />
                   <Tab label="Photos" value="2" />
@@ -128,6 +123,7 @@ export default function MemoryGallery() {
     </ThemeProvider>
   );
 }
+
 
 const itemDataInitial  = [
   { img: `/GalleryPhotos/220908.JPEG`, title: '220908', type: 'photo', date: '2022-09-08', width: 1536, height: 2048 },
