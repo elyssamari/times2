@@ -69,7 +69,7 @@ export default function CoupleCounter() {
         </Grid>
 
         <Grid item>
-          <Grid container direction='row' justifyContent='center' gap={3} alignItems='center'>
+          <Grid container direction='row' justifyContent='center' gap={3} alignItems='center'   >
             <button onClick={handleLeftArrowClick} className="round" style={{ fontFamily: 'Inconsolata, monospace' }}>&#8592;</button>
             <div>
               <Box borderRadius='10px' bgcolor='#FF6961' width='100px' height='115px' alignContent='center'>

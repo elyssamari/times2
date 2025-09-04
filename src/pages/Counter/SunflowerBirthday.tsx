@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material';
 import moment from 'moment';
 
 
-export default function BirthdayCountdown() {
+export default function BirthdayCountdown({darkMode}) {
   const [duration, setDuration] = useState('');
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function BirthdayCountdown() {
   return (
     <Grid container className="widget-background"
     sx={{
-      backgroundImage: `url(${process.env.PUBLIC_URL}/day-sunflower.png)`,
+      backgroundImage: darkMode ?  `url(${process.env.PUBLIC_URL}/night-landscape.png)`: `url(${process.env.PUBLIC_URL}/day-landscape.png)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       width: "586px", 

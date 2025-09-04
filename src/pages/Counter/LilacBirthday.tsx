@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material';
 import moment from 'moment';
 
 
-export default function BirthdayCountdown() {
+export default function BirthdayCountdown({darkMode}) {
   const [duration, setDuration] = useState('');
 
   useEffect(() => {
@@ -40,17 +40,17 @@ export default function BirthdayCountdown() {
 
   return (
     <Grid container className="widget-background"
-    sx={{
-      backgroundImage: `url(${process.env.PUBLIC_URL}/day-pink-flower.png)`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      width: "586px", 
-      height: "300px", 
-      alignItems: "center",
-      justifyContent: "center",
-      borderRadius: "10px", 
-      padding: '8px 8px'
-    }}>
+      sx={{
+        backgroundImage: darkMode ? `url(${process.env.PUBLIC_URL}/night-neighborhood.png)` : `url(${process.env.PUBLIC_URL}/day-pink-flower.png)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "586px",
+        height: "300px",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: "10px",
+        padding: '8px 8px'
+      }}>
       <Grid container className="widget-content" justifyContent='center'>
         <Typography variant='h5' color='white' fontFamily='Inconsolata, monospace' fontWeight='bold'>
           Time until Elyssa's birthday:

@@ -91,10 +91,10 @@ export default function MusicFilterButtons({ filterButton, setFilterButton }) {
           sx={{
             fontWeight: 'bold',
             borderRadius: '5px',
-            color: filterButton === `Joshua's` ? 'white' : 'black',
-            backgroundColor: filterButton === `Joshua's` ? 'black' : 'gray',
+            color: filterButton === `Joshua's` ? 'white' : '#37352f',
+            backgroundColor: filterButton === `Joshua's` ? '#37352f' : 'gray',
             '&:hover': {
-              backgroundColor: filterButton === `Joshua's` ? 'black' : 'darkgray',
+              backgroundColor: filterButton === `Joshua's` ? '#37352f' : 'darkgray',
             },
           }}
           onClick={() => handleButtonClick(`Joshua's`)}
@@ -107,10 +107,10 @@ export default function MusicFilterButtons({ filterButton, setFilterButton }) {
           sx={{
             fontWeight: 'bold',
             borderRadius: '5px',
-            color: filterButton === `Elyssa's` ? 'white' : 'black',
-            backgroundColor: filterButton === `Elyssa's` ? 'black' : 'gray',
+            color: filterButton === `Elyssa's` ? 'white' : '#37352f',
+            backgroundColor: filterButton === `Elyssa's` ? '#37352f' : 'gray',
             '&:hover': {
-              backgroundColor: filterButton === `Elyssa's` ? 'black' : 'darkgray',
+              backgroundColor: filterButton === `Elyssa's` ? '#37352f' : 'darkgray',
             },
           }}
           onClick={() => handleButtonClick(`Elyssa's`)}

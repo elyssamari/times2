@@ -31,10 +31,10 @@ export default function FilterButtons({ filterButton, setFilterButton }) {
         sx={{ 
           fontWeight: 'bold', 
           borderRadius: '5px',
-          color: filterButton === 'Favorites' ? 'white' : 'black',
-          backgroundColor: filterButton === 'Favorites' ? 'black' : 'gray',
+          color: filterButton === 'Favorites' ? 'white' : '#37352f',
+          backgroundColor: filterButton === 'Favorites' ? '#37352f' : 'gray',
           '&:hover': {
-            backgroundColor: filterButton === 'Favorites' ? 'black' : 'darkgray',
+            backgroundColor: filterButton === 'Favorites' ? '#37352f' : 'darkgray',
           }
         }}
         onClick={() => handleButtonClick('Favorites')}
@@ -47,10 +47,10 @@ export default function FilterButtons({ filterButton, setFilterButton }) {
         sx={{ 
           fontWeight: 'bold', 
           borderRadius: '5px',
-          color: filterButton === 'Oldest' ? 'white' : 'black',
-          backgroundColor: filterButton === 'Oldest' ? 'black' : 'gray',
+          color: filterButton === 'Oldest' ? 'white' : '#37352f',
+          backgroundColor: filterButton === 'Oldest' ? '#37352f' : 'gray',
           '&:hover': {
-            backgroundColor: filterButton === 'Oldest' ? 'black' : 'darkgray',
+            backgroundColor: filterButton === 'Oldest' ? '#37352f' : 'darkgray',
           }
         }}
         onClick={() => handleButtonClick('Oldest')}

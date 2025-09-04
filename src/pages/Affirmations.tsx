@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ReplayIcon from '@mui/icons-material/Replay';
 
 
-export default function Affirmations() {
+export default function Affirmations({darkMode}) {
   const [currentMessage, setCurrentMessage] = useState(messagesData[0]);
 
   const handleRandomMessage = () => {
@@ -14,22 +14,22 @@ export default function Affirmations() {
   return (
     <Grid container gap={4} padding='24px 24px' justifyContent='center' direction='column'>
       <Grid container direction='column' gap={3}>
-        <Typography variant="h3" fontWeight='bold' align='center'>
+        <Typography variant="h3" fontWeight='bold' align='center' sx={{ color: darkMode ? 'white' : 'black' }} >
           Messages
         </Typography>
-        <Box height='2px' width='100%' sx={{ backgroundColor: 'black' }} />
+        <Box height='2px' width='100%' sx={{ backgroundColor: '#3F3F3F' }} />
       </Grid>
 
       <Grid container gap={2}
         sx={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/day-pink-house.png)`,
+          backgroundImage: darkMode ?  `url(${process.env.PUBLIC_URL}/night-house.png)`: `url(${process.env.PUBLIC_URL}/day-pink-house.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: '16px 16px 16px 16px',
           borderRadius: '10px',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: '#37352f'
+          borderColor:  darkMode ? 'white' : '#333'
         }}>
         <Grid container justifyContent='center'>
           <img
@@ -42,7 +42,8 @@ export default function Affirmations() {
           <Typography variant="h5" align='center' sx={{backgroundColor:'white', borderRadius: '10px',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: '#37352f', padding: '8px 8px'}}>
+          borderColor: '#37352f', 
+          padding: '8px 8px'}}>
             {currentMessage.emoticon}
           </Typography>
         </Grid>

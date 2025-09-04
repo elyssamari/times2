@@ -32,7 +32,7 @@ export default function Anniversary({darkMode}) {
   return (
     <Grid container className="widget-background"
     sx={{
-      backgroundImage: `url(${process.env.PUBLIC_URL}/day-duck-house.png)`,
+      backgroundImage: darkMode ?  `url(${process.env.PUBLIC_URL}/night-cat.png)`: `url(${process.env.PUBLIC_URL}/day-duck-house.png)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       width: "586px", 
