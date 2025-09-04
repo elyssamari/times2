@@ -6,7 +6,6 @@ import LibraryMusicRoundedIcon from '@mui/icons-material/LibraryMusicRounded';
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import TryRoundedIcon from '@mui/icons-material/TryRounded';
 
-
 export default function ApplicationBar({ toggleDarkMode, darkMode }) {
   const location = useLocation();
 
@@ -62,23 +61,15 @@ export default function ApplicationBar({ toggleDarkMode, darkMode }) {
     { name: 'Music Playlist', icon: <LibraryMusicRoundedIcon sx={{ color: '#B89136' }} />, href: '#/music-playlist' },
     { name: 'Couple Counter', icon: <CalendarMonthRoundedIcon sx={{ color: '#B89136' }} />, href: '#/couple-counter' },
     { name: 'Messages', icon: <TryRoundedIcon sx={{ color: '#B89136' }} />, href: '#/messages' },
-    { name: darkMode ? "Dark Mode" : "Light Mode", icon: <MaterialUISwitch checked={darkMode} onChange={toggleDarkMode}/> }
   ];
 
   const [isHeartHovered, setIsHeartHovered] = useState(false);
-
-  const handleHeartHover = () => {
-    setIsHeartHovered(true);
-  };
-
-  const handleHeartLeave = () => {
-    setIsHeartHovered(false);
-  };
 
   return (
     <AppBar elevation={0} position='relative' sx={{ background: darkMode ? '#0F0F0F' : '#FFFCF4', padding: `16px 8px 8px 8px` }}>
       <Toolbar>
         <Grid container justifyContent='space-between' alignItems='center'>
+          {/* Logo */}
           <Link
             href='#/'
             sx={{ color: '#fff', textDecoration: 'none' }}
@@ -94,8 +85,8 @@ export default function ApplicationBar({ toggleDarkMode, darkMode }) {
                 alt='heart'
                 src={`${process.env.PUBLIC_URL}/heart.png`}
                 style={{ height: 40, marginRight: 8 }}
-                onMouseEnter={handleHeartHover}
-                onMouseLeave={handleHeartLeave}
+                onMouseEnter={() => setIsHeartHovered(true)}
+                onMouseLeave={() => setIsHeartHovered(false)}
               />
               <img
                 alt='joshua'
@@ -106,62 +97,58 @@ export default function ApplicationBar({ toggleDarkMode, darkMode }) {
             </Box>
           </Link>
 
+          {/* Navigation */}
           <Grid item>
             <Grid container gap={5} alignItems='center'>
               {navItems.map((item) => (
                 <Grid item key={item.name}>
-                  {item.name === 'Dark Mode' || item.name === 'Light Mode' ? (
+                  <Link
+                    href={item.href}
+                    className={location.hash === item.href ? 'nav-item active' : 'nav-item'}
+                    sx={{ textDecoration: 'none', color: darkMode ? '#FFFF' : '#37352f' }}
+                  >
                     <Box
                       sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        '& .MuiSvgIcon-root': {
-                          color: darkMode ? '#FFFF' : '#37352f',
+                        position: 'relative',
+                        '&:hover .MuiSvgIcon-root, &.active .MuiSvgIcon-root': {
+                          color: '#FCC850'
                         },
+                        '&:hover .hoverLine, &.active .hoverLine': {
+                          width: '100%'
+                        }
                       }}
                     >
                       {item.icon}
-                    </Box>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={location.hash === item.href ? 'nav-item active' : 'nav-item'}
-                      sx={{ textDecoration: 'none', color: darkMode ? '#FFFF' : '#37352f' }}
-                    >
-                      <Box
+                      <Typography variant="h6" fontWeight='bold' color={darkMode ? 'white' : 'black'}>
+                        {item.name}
+                      </Typography>
+                      <Box className="hoverLine"
                         sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          position: 'relative',
-                          '&:hover .MuiSvgIcon-root, &.active .MuiSvgIcon-root': {
-                            color: '#FCC850'
-                          },
-                          '&:hover .hoverLine, &.active .hoverLine': {
-                            width: '100%'
-                          }
+                          height: '2px',
+                          width: '0%',
+                          transition: 'width 0.3s',
+                          position: 'absolute',
+                          bottom: 0,
+                          backgroundColor: '#FCC850'
                         }}
-                      >
-                        {item.icon}
-                        <Typography variant="h6" fontWeight='bold' color={darkMode ? 'white' : 'black'}>
-                          {item.name}
-                        </Typography>
-                        <Box className="hoverLine"
-                          sx={{
-                            height: '2px',
-                            width: '0%',
-                            transition: 'width 0.3s',
-                            position: 'absolute',
-                            bottom: 0,
-                            backgroundColor: '#FCC850'
-                          }}
-                        />
-                      </Box>
-                    </Link>
-                  )}
+                      />
+                    </Box>
+                  </Link>
                 </Grid>
               ))}
+
+              {/* Dark/Light Mode Toggle */}
+              <Grid item>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <MaterialUISwitch checked={darkMode} onChange={toggleDarkMode} />
+                  <Typography variant="h6" fontWeight='bold' color={darkMode ? 'white' : 'black'}>
+                    {darkMode ? "Dark Mode" : "Light Mode"}
+                  </Typography>
+                </Box>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

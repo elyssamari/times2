@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ApplicationBar from './layouts/ApplicationBar.tsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -67,7 +67,16 @@ const AppWrapper = ({ children, darkMode }) => {
 };
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  // Load saved darkMode preference from localStorage
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  // Save preference whenever darkMode changes
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const theme = darkMode ? darkTheme : lightTheme;
 
